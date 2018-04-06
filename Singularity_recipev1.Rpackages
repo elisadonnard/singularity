@@ -1,0 +1,11 @@
+BootStrap: shub
+From: shub://pranithavangala/singularity:r-3-4-3
+
+%labels
+
+    AUTHOR Elisa Donnard
+    Version v1.0
+
+%post
+
+  R --slave "devtools::install_github('statOmics/zingeR')"
