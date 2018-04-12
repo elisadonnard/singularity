@@ -8,4 +8,4 @@ From: shub://pranithavangala/singularity:r-3-4-3
 
 %post
 
-  R --slave "devtools::install_github('statOmics/zingeR')"
+  R --slave -e "devtools::install_github('statOmics/zingeR')"
