@@ -37,7 +37,7 @@ export R_VERSION=R-3.5.0
 
 %post
   NPROCS=`awk '/^processor/ {s+=1}; END{print s}' /proc/cpuinfo`
-  wget https://cran.rstudio.com/src/base/R-3/R-3.4.3.tar.gz
+  wget https://cran.rstudio.com/src/base/R-3/R-3.5.0.tar.gz
   tar xvf R-3.5.0.tar.gz
   cd R-3.5.0
 
