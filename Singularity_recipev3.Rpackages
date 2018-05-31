@@ -1,0 +1,11 @@
+BootStrap: shub
+From: shub://elisadonnard/singularity:r3.5
+
+%labels
+
+    AUTHOR Elisa Donnard
+    Version v3.0
+
+%post
+
+  R --slave -e "devtools::install_github('Vivianstats/scImpute')"
