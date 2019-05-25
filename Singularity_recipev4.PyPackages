@@ -4,9 +4,9 @@ From: shub://elisadonnard/singularity:r3.5
 %labels
 
     AUTHOR Elisa Donnard
-    Version v3.0
+    Version v4.0
 
 %post
 
-pip install biopython numpy pandas PyBrain regex scipy
+pip install biopython==1.68 numpy==1.11.0 pandas==0.18.1 PyBrain==0.3 regex==2016.9.22 scipy==0.18.1
 
