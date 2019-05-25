@@ -1,0 +1,12 @@
+BootStrap: shub
+From: shub://elisadonnard/singularity:r3.5
+
+%labels
+
+    AUTHOR Elisa Donnard
+    Version v3.0
+
+%post
+
+pip install biopython numpy pandas PyBrain regex scipy
+
