@@ -7,6 +7,6 @@ From: shub://elisadonnard/singularity:r3.5
     Version v4.0
 
 %post
-sudo apt install python3.6
+apt install python3.6
 python3 -m pip install biopython numpy pandas PyBrain regex scipy
 
