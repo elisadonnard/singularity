@@ -7,7 +7,6 @@ From: shub://elisadonnard/singularity:r3.5
     Version v5.0
 
 %post
-
-    curl --header 'Host: crisprcas.i2bc.paris-saclay.fr' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' --header 'Accept-Language: en-US,en;q=0.5' --referer 'https://crisprcas.i2bc.paris-saclay.fr/Home/Download' --cookie '.AspNetCore.Antiforgery.J-WhSl0HFKQ=CfDJ8BHHdNKGSoRLk4C9ihWFzSiWbV0nFwuaGYeYEQbAoGM8SNKLuvrgoLA9Q8EIUsh_CE0ggBV81azJEGs3H6QAKREGzq2J49r2RYuYILvU2PKsj9tJVCLKfdt2b_0up-9uiWO-8YZGtx5k_GjlkcIR6fA' --header 'Upgrade-Insecure-Requests: 1' 'https://crisprcas.i2bc.paris-saclay.fr/Home/DownloadFile?filename=CRISPRCasFinder.zip' --output 'CRISPRCasFinder.zip'
+    wget https://crisprcas.i2bc.paris-saclay.fr/Home/DownloadFile?filename=CRISPRCasFinder.zip -O CRISPRCasFinder.zip
     unzip CRISPRCasFinder.zip
     bash CRISPRCasFinder/installer_UBUNTU.sh
