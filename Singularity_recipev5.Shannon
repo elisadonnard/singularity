@@ -7,6 +7,50 @@ From: shub://elisadonnard/singularity:r3.5
     Version v5.0
 
 %post
-    wget https://galaxyweb.umassmed.edu/galaxy/ed70w/test/CRISPRCasFinder.zip -O CRISPRCasFinder.zip
-    unzip CRISPRCasFinder.zip
-    bash CRISPRCasFinder/installer_UBUNTU.sh
+# singularity image with all CRISPRCasFinder.pl-v4.2's dependencies installed
+# same version than CRISPRCasFinder.pl, here 4.2.19
+# 
+# modified by Elisa Donnard in 09/30/2019
+# authors: David Couvin, Fabrice Leclerc, Claire Toffano-Nioche
+
+# installations
+echo "apt-get update/upgrade" 
+apt-get -y update 
+apt-get -y upgrade 
+
+#important packages
+apt-get -y install wget
+apt-get -y install curl
+apt-get -y install git
+apt-get -y install default-jre
+apt-get -y install python
+apt-get -y install parallel
+apt-get -y install cpanminus
+
+#"bioinfo" packages
+apt-get -y install hmmer
+apt-get -y install emboss
+apt-get -y install emboss-lib
+apt-get -y install ncbi-blast+
+apt-get -y install bioperl
+apt-get -y install bioperl-run
+apt-get -y install libdatetime-perl
+apt-get -y install libxml-simple-perl
+apt-get -y install libdigest-md5-perl
+apt-get -y install clustalw
+
+cpanm Try::Tiny 
+cpanm Test::Most 
+cpanm JSON::Parse 
+cpanm Class::Struct 
+cpanm Bio::DB::Fasta 
+cpanm File::Copy  
+cpanm Bio::Seq Bio::SeqIO 
+cpanm Bio::Tools::Run::Alignment::Clustalw  
+cpanm Bio::Tools::Run::Alignment::Muscle 
+
+#install muscle
+apt-get -y install muscle
+ 
+#install prodigal
+apt-get -y install prodigal
