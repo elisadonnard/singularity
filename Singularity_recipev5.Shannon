@@ -13,8 +13,7 @@ From: shub://elisadonnard/singularity:r3.5
 # modified by Elisa Donnard in 09/30/2019
 # authors: David Couvin, Fabrice Leclerc, Claire Toffano-Nioche
 
-# installations
-echo "apt-get update/upgrade" 
+# installations 
 apt-get -y update 
 apt-get -y upgrade 
 
@@ -47,7 +46,7 @@ cpanm Bio::DB::Fasta
 cpanm File::Copy  
 cpanm Bio::Seq Bio::SeqIO 
 cpanm Bio::Tools::Run::Alignment::Clustalw  
-cpanm Bio::Tools::Run::Alignment::Muscle 
+cpanm -f Bio::Tools::Run::Alignment::Muscle 
 
 #install muscle
 apt-get -y install muscle
