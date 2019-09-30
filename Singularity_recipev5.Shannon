@@ -7,6 +7,6 @@ From: shub://elisadonnard/singularity:r3.5
     Version v5.0
 
 %post
-    wget https://crisprcas.i2bc.paris-saclay.fr/Home/DownloadFile?filename=CRISPRCasFinder.zip -O CRISPRCasFinder.zip
+    wget https://galaxyweb.umassmed.edu/galaxy/ed70w/test/CRISPRCasFinder.zip -O CRISPRCasFinder.zip
     unzip CRISPRCasFinder.zip
     bash CRISPRCasFinder/installer_UBUNTU.sh
