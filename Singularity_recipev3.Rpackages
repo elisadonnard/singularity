@@ -8,4 +8,4 @@ From: shub://elisadonnard/singularity:r3.5
 
 %post
 
-  R --slave -e "devtools::install_github('Vivianstats/scImpute')"
+  R --slave -e "devtools::install_github('constantAmateur/SoupX')"
