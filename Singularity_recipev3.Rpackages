@@ -8,4 +8,6 @@ From: shub://elisadonnard/singularity:r3.5
 
 %post
 
+  R --slave -e "source('https://bioconductor.org/biocLite.R'); biocLite('metap')"
+  R --slave -e "source('https://bioconductor.org/biocLite.R'); biocLite('Seurat')"
   R --slave -e "devtools::install_github('constantAmateur/SoupX')"
