@@ -4,21 +4,7 @@ From: shub://elisadonnard/singularity:0.3
 %labels
 
     AUTHOR Elisa Donnard
-    Version v4.0.3
-
-%environment
-    export SRC=/usr/local/src
-    export BIN=/usr/local/bin
-    export R_VERSION=R-4.0.3
-
-%apprun R
-  exec R "$@"
-
-%apprun Rscript
-  exec Rscript "$@"
-
-%runscript
-  exec R "$@"    
+    Version v4.0.3   
 
 %post
 
