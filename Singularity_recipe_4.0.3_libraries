@@ -6,6 +6,11 @@ From: shub://elisadonnard/singularity:0.3
     AUTHOR Elisa Donnard
     Version v4.0.3   
 
+%environment
+    export SRC=/usr/local/src
+    export BIN=/usr/local/bin
+    export R_VERSION=R-4.0.3
+
 %post
 
   echo install.packages\(\"devtools\"\, repos\=\'https://cloud.r-project.org\'\, Ncpus\=${NPROCS}\) | R --slave
