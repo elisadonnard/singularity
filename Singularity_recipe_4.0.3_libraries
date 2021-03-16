@@ -1,0 +1,62 @@
+BootStrap: shub
+From: shub://elisadonnard/singularity:0.3
+
+%labels
+
+    AUTHOR Elisa Donnard
+    Version v4.0.3
+
+%environment
+    export SRC=/usr/local/src
+    export BIN=/usr/local/bin
+    export R_VERSION=R-4.0.3
+
+%apprun R
+  exec R "$@"
+
+%apprun Rscript
+  exec Rscript "$@"
+
+%runscript
+  exec R "$@"    
+
+%post
+
+  echo install.packages\(\"devtools\"\, repos\=\'https://cloud.r-project.org\'\, Ncpus\=${NPROCS}\) | R --slave
+  echo install.packages\(\"ade4\"\, repos\=\'https://cloud.r-project.org\'\, Ncpus\=${NPROCS}\) | R --slave
+  echo install.packages\(\"ape\"\, repos\=\'https://cloud.r-project.org/\'\, Ncpus\=${NPROCS}\) | R --slave
+  echo install.packages\(\"FD\"\, repos\=\'https://cloud.r-project.org/\'\, Ncpus\=${NPROCS}\) | R --slave
+  echo install.packages\(\"ggplot2\"\, repos\=\'https://cloud.r-project.org/\'\, Ncpus\=${NPROCS}\) | R --slave
+  echo install.packages\(\"BiocManager\"\, repos\=\'https://cloud.r-project.org/\'\, Ncpus\=${NPROCS}\) | R --slave
+  R --slave -e "BiocManager::install('tidyverse')"
+  R --slave -e "BiocManager::install('edgeR')"
+  R --slave -e "BiocManager::install('DESeq2')"
+  R --slave -e "BiocManager::install('gplots')"
+  R --slave -e "BiocManager::install('Biobase', dep = TRUE)"
+  R --slave -e "BiocManager::install('DropletUtils', dep = TRUE)"
+  R --slave -e "BiocManager::install('stringr', dep = TRUE)"
+  R --slave -e "BiocManager::install('densityClust', dep = TRUE)"
+  R --slave -e "BiocManager::install('RColorBrewer', dep = TRUE)"
+  R --slave -e "BiocManager::install('Rtsne', dep = TRUE)"
+  R --slave -e "BiocManager::install('ggpubr', dep = TRUE)"
+  R --slave -e "BiocManager::install('limSolve', dep = TRUE)"
+  R --slave -e "BiocManager::install('scran', dep = TRUE)"
+  R --slave -e "BiocManager::install('fpc', dep = TRUE)"
+  R --slave -e "BiocManager::install('irlba', dep = TRUE)"
+  R --slave -e "BiocManager::install('SCENIC')"
+  R --slave -e "BiocManager::install('AUCell')"
+  R --slave -e "BiocManager::install('RcisTarget')"
+  R --slave -e "BiocManager::install('SCopeLoomR')"
+  R --slave -e "BiocManager::install('KernSmooth')"
+  R --slave -e "BiocManager::install('BiocParallel')"
+  R --slave -e "BiocManager::install('ggplot2')"
+  R --slave -e "BiocManager::install('data.table')"
+  R --slave -e "BiocManager::install('grid')"
+  R --slave -e "BiocManager::install('ComplexHeatmap')"
+  R --slave -e "devtools::install_github('garber-lab/SignallingSingleCell')"  
+ 
+ 
+###################
+# mount directories
+
+mkdir /seq
