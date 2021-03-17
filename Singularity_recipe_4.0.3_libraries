@@ -54,9 +54,7 @@ exec R "$@"
   R --slave -e 'BiocManager::install("ggplot2")'
   R --slave -e 'BiocManager::install("data.table")'
   R --slave -e 'BiocManager::install("grid")'
-  R --slave -e 'BiocManager::install("ComplexHeatmap")'
-  R --slave -e 'devtools::install_github("garber-lab/SignallingSingleCell")'
- 
+  R --slave -e 'BiocManager::install("ComplexHeatmap")' 
  
 ###################
 # mount directories
