@@ -1,17 +1,23 @@
 BootStrap: shub
-From: shub://elisadonnard/singularity:0.3
+From: shub://elisadonnard/singularity:latest
 
 %labels
 
     AUTHOR Elisa Donnard
-    Version v4.0.3   
+    Version v1
 
-%environment
-    export SRC=/usr/local/src
-    export BIN=/usr/local/bin
-    export R_VERSION=R-4.0.3
+%apprun R
+exec R "$@"
+
+%apprun Rscript
+exec Rscript "$@"
+
+%runscript
+exec R "$@"
 
 %post  
+  apt-get install -y r-base r-base-dev
+
   R --version
   
   # installing packages from cran
