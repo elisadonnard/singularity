@@ -36,10 +36,6 @@ export R_VERSION=R-4.0.3
 
 
 %post
-  NPROCS=`awk '/^processor/ {s+=1}; END{print s}' /proc/cpuinfo`
-  wget https://cran.rstudio.com/src/base/R-4/R-4.0.3.tar.gz
-  tar xvf R-4.0.3.tar.gz
-  cd R-4.0.3
 
   apt-get update
   apt-get install -y libblas3 libblas-dev liblapack-dev liblapack3 curl 
@@ -53,6 +49,14 @@ export R_VERSION=R-4.0.3
   apt install -y libssl-dev libxml2-dev libpcre3-dev liblzma-dev libbz2-dev libcurl4-openssl-dev
 
   apt-get update
+  
+  NPROCS=`awk '/^processor/ {s+=1}; END{print s}' /proc/cpuinfo`
+  wget https://cran.rstudio.com/src/base/R-4/R-4.0.3.tar.gz
+  tar xvf R-4.0.3.tar.gz
+  cd R-4.0.3
+  ./configure
+  make
+
 
 ###################
 # mount directories
