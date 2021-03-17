@@ -21,21 +21,6 @@ From: shub://elisadonnard/singularity:latest
   exec R "$@"    
 
 %post
-######
-## vim
-######
-
-apt-get install -y vim
-
-#####
-## R
-#####
-export SRC=/usr/local/src
-export BIN=/usr/local/bin
-export R_VERSION=R-4.0.3
-
-
-%post
 
   apt-get update
   apt-get install -y libblas3 libblas-dev liblapack-dev liblapack3 curl 
