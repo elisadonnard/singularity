@@ -43,16 +43,7 @@ exec R "$@"
   R --slave -e 'BiocManager::install("scran", dep = TRUE)'
   R --slave -e 'BiocManager::install("fpc", dep = TRUE)'
   R --slave -e 'BiocManager::install("irlba", dep = TRUE)'
-  R --slave -e 'BiocManager::install("SCENIC")'
-  R --slave -e 'BiocManager::install("AUCell")'
-  R --slave -e 'BiocManager::install("RcisTarget")'
-  R --slave -e 'BiocManager::install("SCopeLoomR")'
-  R --slave -e 'BiocManager::install("KernSmooth")'
-  R --slave -e 'BiocManager::install("BiocParallel")'
-  R --slave -e 'BiocManager::install("ggplot2")'
-  R --slave -e 'BiocManager::install("data.table")'
-  R --slave -e 'BiocManager::install("grid")'
-  R --slave -e 'BiocManager::install("ComplexHeatmap")' 
+  
  
 ###################
 # mount directories
