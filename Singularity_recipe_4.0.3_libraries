@@ -1,5 +1,5 @@
 BootStrap: shub
-From: shub://elisadonnard/singularity:latest
+From: shub://elisadonnard/singularity:0.3
 
 %labels
 
