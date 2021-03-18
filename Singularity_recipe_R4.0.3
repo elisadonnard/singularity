@@ -23,7 +23,7 @@ From: shub://elisadonnard/singularity:latest
 %post
 
   apt-get update
-  apt-get install -y libblas3 libblas-dev liblapack-dev liblapack3 curl 
+  apt-get install -y libblas3 libblas-dev liblapack-dev liblapack3 curl apt-utils
   apt-get install -y libgmp10 libgmp-dev
   apt-get install -y gcc fort77 aptitude
   aptitude install -y g++
@@ -34,14 +34,15 @@ From: shub://elisadonnard/singularity:latest
   apt install -y libssl-dev libxml2-dev libpcre3-dev liblzma-dev libbz2-dev libcurl4-openssl-dev
 
   apt-get update
-  apt-get install texlive texlive-fonts-extra
+  apt-get install -y texlive texlive-fonts-extra
   
   NPROCS=`awk '/^processor/ {s+=1}; END{print s}' /proc/cpuinfo`
   wget https://cran.rstudio.com/src/base/R-4/R-4.0.3.tar.gz
   tar xvf R-4.0.3.tar.gz
   cd R-4.0.3
-  ./configure
+  ./configure --enable-R-static-lib --with-blas --with-lapack --enable-R-shlib=yes
   make
+  make install
 
 
 ###################
