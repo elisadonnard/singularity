@@ -16,8 +16,6 @@ exec Rscript "$@"
 exec R "$@"
 
 %post  
-  apt-get install -y r-base r-base-dev
-
   R --version
   
   # installing packages from cran
